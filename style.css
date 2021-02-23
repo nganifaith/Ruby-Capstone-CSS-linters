@@ -1,0 +1,745 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Roboto, sans-serif;
+}
+
+/* GENERAL */
+
+a {
+  text-decoration: none;
+  color: black;
+  font-weight: 900;
+  font-size: 16px;
+  text-align: left;
+}
+
+.body {
+  line-height: 1.5;
+  min-height: 100vh;
+  background-color: #555;
+}
+
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 5px;
+}
+
+ul {
+  list-style: none;
+}
+
+ul li::before {
+  content: "\2022";
+  color: red;
+  font-weight: bold;
+  display: inline-block;
+}
+
+img {
+  width: 100%;
+}
+
+small,
+small a {
+  font-size: 10px;
+  font-weight: normal;
+  margin: 10px;
+  color: white;
+}
+
+.section-title {
+  font-weight: bold;
+  text-decoration: none;
+  color: rgb(255, 60, 0);
+  margin: 15px 0;
+  font-size: 20px;
+  padding: 10px;
+}
+
+.section-subtitle {
+  display: flex;
+  flex-direction: column;
+}
+
+/* NAV BAR */
+
+.top-nav-bar,
+.bottom-nav-bar {
+  display: none;
+}
+
+.nav-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #ccc;
+}
+
+.nav-bar-logo-box {
+  background-color: black;
+  width: 106px;
+  height: 48px;
+}
+
+.nav-logo {
+  display: block;
+  width: 66px;
+  margin: auto;
+  padding-top: 18px;
+}
+
+.nav-bar-icons i {
+  padding: 15px;
+  border-left: 1px solid #ccc;
+}
+
+.fa-search {
+  opacity: 45%;
+}
+
+.fa-bars {
+  color: rgb(255, 60, 0);
+}
+
+/* TOP SECTION */
+
+.article-author i {
+  margin: 4px;
+}
+
+.article-title a,
+.article-header a {
+  color: white;
+  font-size: 20px;
+}
+
+.top-section div,
+.top-section aside {
+  min-height: 200px;
+  background-size: cover;
+}
+
+.logo-date-wrapper {
+  display: none;
+}
+
+.feature-article {
+  background-image: url("./assets/Capitol-dating-app-796x417.jpg");
+}
+
+.side-article-one {
+  background-image: url("./assets/Galaxy-hed-796x419.jpg");
+}
+
+.side-article-two {
+  background-image: url("./assets/Eye-strain-screen-time-hed-796x419.jpg");
+}
+
+.article-content {
+  display: flex;
+  height: 100%;
+  background-image: linear-gradient(to top, black, transparent);
+  justify-content: flex-end;
+  flex-direction: column;
+  color: white;
+  padding: 10px;
+  align-items: flex-start;
+}
+
+.content {
+  margin: 10px;
+}
+
+.article-author,
+.article-author a {
+  font-size: 9px;
+  font-weight: lighter;
+  color: white;
+  margin: 10px 0;
+}
+
+/* Lastest News */
+
+.lastest-news {
+  margin: 10px;
+}
+
+.lastest-news-article {
+  display: flex;
+}
+
+.lastest-news-img {
+  width: 75px;
+  height: 60px;
+  margin-right: 10px;
+}
+
+.lastest-news-article > div {
+  font-size: 16px;
+  color: black;
+}
+
+/* Latest Funding Rounds */
+
+.section-subtitle a {
+  font-weight: 100;
+  padding: 2px;
+  color: rgb(255, 115, 0);
+}
+
+.latest-funding-rounds {
+  margin-top: 100px;
+}
+
+.latest-funding-article img {
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-top: 10px;
+  margin-left: 20px;
+}
+
+.latest-funding-article {
+  position: relative;
+  margin-top: 20px;
+  background-color: #fffaf8;
+}
+
+.latest-funding-company-name {
+  padding-top: 10px;
+  padding-left: 100px;
+  color: white;
+  height: 40px;
+  background-color: #f42;
+}
+
+.funding-desc {
+  padding: 10px 0 10px 100px;
+  background-color: #ff442214;
+}
+
+.latest-funding-amount {
+  margin: 0;
+}
+
+.latest-funding-cat {
+  font-size: 12px;
+  font-weight: normal;
+  opacity: 0.4;
+}
+
+.latest-funding-description {
+  background-color: #fffaf8;
+  color: #555;
+  font-size: 13px;
+  padding: 10px;
+  font-weight: lighter;
+}
+
+.latest-funding-description > div {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.latest-funding-description p {
+  border-top: 1px solid rgba(255, 68, 34, 0.25);
+  margin-top: 15px;
+  padding: 10px 5px;
+  font-weight: normal;
+}
+
+.latest-funding-description .material-icons {
+  font-size: 18px;
+  margin-right: 5px;
+  color: black;
+}
+
+/* More articles */
+
+.article1 {
+  background-image: url("./assets/Trump-Twitter-368x276.jpg");
+  min-height: 300px;
+  background-size: cover;
+}
+
+.article2 {
+  background-image: url("./assets/Untitled-design-13-368x276.png");
+  min-height: 300px;
+  background-size: cover;
+}
+
+.article3 {
+  background-image: url("./assets/Eye-strain-screen-time-hed-796x419.jpg");
+  min-height: 300px;
+  background-size: cover;
+}
+
+.article4 {
+  background-image: url("./assets/1-copy-26-516x270.jpg");
+  min-height: 300px;
+  background-size: cover;
+}
+
+.article5 {
+  background-image: url("./assets/Galaxy-hed-796x419.jpg");
+  min-height: 300px;
+  background-size: cover;
+}
+
+.article6 {
+  background-image: url("./assets/featured-e1561584989913-537x270.jpg");
+  min-height: 300px;
+  background-size: cover;
+}
+
+.article7 {
+  background-image: url("./assets/car-ev-tesla-bus-future-electric-car-cambridgeshire.jpg");
+  min-height: 300px;
+  background-size: cover;
+}
+
+.article8 {
+  background-image: url("./assets/android-auto-language-ev-future-car-infotainment-car-play-carplay-android-phone-368x276.png");
+  min-height: 300px;
+  background-size: cover;
+}
+
+.article9 {
+  background-image: url("./assets/WhatsApp-police-hed-513x270.jpg");
+  min-height: 300px;
+  background-size: cover;
+}
+
+.article-title {
+  font-size: 20px;
+}
+
+.sub-article {
+  display: flex;
+  background-color: rgba(255, 68, 34, 0.06);
+  margin: 2px 0;
+}
+
+.side-img {
+  top: 0;
+  right: 0;
+  width: 100px;
+}
+
+.side-description {
+  margin: auto;
+  padding: 15px;
+  font-size: 14px;
+  overflow: hidden;
+  color: #f42;
+}
+
+.last-article-description a {
+  padding: 5px;
+  font-size: 13px;
+  opacity: 0.7;
+  text-decoration: none;
+  font-weight: normal;
+  margin: auto;
+}
+
+.footer-links a {
+  color: #aaa;
+  padding: 2px;
+  font-size: 10px;
+}
+
+.side-description > p > a {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 12px;
+  color: #f42;
+}
+
+.last-article-description > ul > li {
+  border-bottom: 1px solid #ccc;
+}
+
+/* LATEST DEALS */
+
+.deals-headers {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.deal-img {
+  width: 75px;
+  height: 75px;
+}
+
+.latest-deals {
+  margin-bottom: 20px;
+}
+
+.discount {
+  display: none;
+}
+
+.latest-deal-articles {
+  display: flex;
+  margin-bottom: 5px;
+}
+
+.latest-deal-articles div {
+  margin-left: 5px;
+}
+
+.latest-deal-articles small {
+  color: black;
+}
+
+.strike-through {
+  text-decoration: line-through;
+}
+
+/* FOOTER  */
+
+.main-footer {
+  color: white;
+  background-color: #aaa;
+  font-size: 10px;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+  max-width: 275px;
+  margin: auto;
+}
+
+.social-icons a i {
+  text-align: center;
+  color: white;
+  background-color: #333;
+  width: 30px;
+  height: 30px;
+  padding: 6px;
+  margin: 1px;
+  border: 1px solid #333;
+  border-radius: 50%;
+}
+
+.footer-links {
+  text-align: center;
+}
+
+.footer-wrapper {
+  background-color: #131313;
+  padding-bottom: 20px;
+}
+
+.copyright {
+  text-align: center;
+  height: 50px;
+  background-color: #000;
+  padding-bottom: 10px;
+}
+
+.copyright span {
+  color: #aaa;
+}
+
+.logo img {
+  width: 30px;
+}
+
+.stackpath-img {
+  width: 50px;
+}
+
+/* MEDIA Queries */
+
+@media only screen and (min-width: 768px) {
+  /* NAV BAR */
+
+  .nav-bar {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+      "nav-bar-logo-box top-nav-bar top-nav-bar"
+      "nav-bar-logo-box bottom-nav-bar nav-bar-icons";
+  }
+
+  .nav-bar-logo-box {
+    grid-area: nav-bar-logo-box;
+    width: 100%;
+    height: 100%;
+  }
+
+  .latest-funding-article img {
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-top: 25px;
+    margin-left: 20px;
+  }
+
+  .nav-bar-logo-box a img {
+    padding-top: 35px;
+  }
+
+  .top-nav-bar {
+    grid-area: top-nav-bar;
+    display: flex;
+    align-items: center;
+    background-color: black;
+    padding: 10px;
+  }
+
+  .bottom-links a {
+    color: #aaa;
+    font-size: 13px;
+    margin-right: 6px;
+  }
+
+  .top-nav-bar div a {
+    color: white;
+    font-size: 13px;
+    font-weight: normal;
+    padding: 5px;
+  }
+
+  .top-right-links {
+    display: none;
+  }
+
+  .bottom-nav-bar {
+    grid-area: bottom-nav-bar;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 15px;
+  }
+
+  .bottom-nav-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px;
+  }
+
+  .fa-bars {
+    display: none;
+  }
+
+  /* FEATURE ARTICLES */
+
+  .top-section {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+  }
+
+  .feature-article {
+    grid-area: 1 / 1 / span 1 / span 1;
+  }
+
+  /* LATEST NEWS */
+
+  .lastest-news-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 15px;
+  }
+
+  .lastest-news-article {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .lastest-news-article a img {
+    width: 100%;
+    height: 115px;
+  }
+
+  /* LATEST FUNDING ROUNDS */
+
+  .funding-articles-flex {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 15px;
+  }
+
+  /* MORE ARTICLES */
+
+  .more-articles {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+  }
+
+  .side-img {
+    top: 0;
+    right: 0;
+    width: 25%;
+  }
+
+  /* LATEST DEALS  */
+
+  .deals-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 15px;
+  }
+
+  .latest-deal-articles {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+
+  .deal-img {
+    width: 100%;
+    height: 150px;
+  }
+
+  .discount {
+    display: block;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 75px;
+    width: 75px;
+    background-image: url("./assets/deals-ribbon.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    color: #000;
+    z-index: 10;
+  }
+
+  .discount div {
+    position: relative;
+    transform: rotate(45deg);
+    font-size: 14px;
+    font-weight: bold;
+    left: 8px;
+    right: 5px;
+    text-align: center;
+    top: 25px;
+    width: 100%;
+  }
+
+  /* FOOTER  */
+
+  .copyright {
+    padding-top: 10px;
+  }
+}
+
+@media only screen and (min-width: 1020px) {
+  .nav-bar-logo-box {
+    display: none;
+  }
+
+  .nav-bar {
+    display: block;
+  }
+
+  .top-nav-bar {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .top-right-links {
+    display: block;
+  }
+
+  .content {
+    position: relative;
+  }
+
+  .logo-date-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .main-logo {
+    margin-left: 20px;
+    margin-top: -80px;
+  }
+
+  .article-date {
+    color: white;
+    width: 500px;
+    margin-top: -150px;
+    margin-left: 175px;
+  }
+
+  .feature-article .article-content {
+    background-image: linear-gradient(to top left, black, transparent, #f42);
+  }
+
+  /* lastest News */
+
+  .lastest-news-section {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+
+  /* lastest funding round */
+
+  .funding-articles-flex {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+
+  .latest-funding-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px;
+  }
+
+  .section-subtitle {
+    display: inline;
+  }
+
+  .section-subtitle a {
+    margin: 5px;
+    font-weight: 900;
+  }
+
+  .section-subtitle :nth-child(2) {
+    border-left: 1px solid #f42;
+    border-right: 1px solid #f42;
+  }
+
+  /* more articles */
+
+  .more-articles {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .side-img {
+    height: 60px;
+  }
+
+  /* latest deals  */
+
+  .deals-wrapper {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+
+  .deal-img {
+    height: 150px;
+  }
+}
