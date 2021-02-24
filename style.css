@@ -42,13 +42,14 @@ img {
   width: 100%;
 }
 
-small,
+small, 
 small a {
   font-size: 10px;
   font-weight: normal;
   margin: 10px;
-  color: white;
+  color: white; 
 }
+
 
 .section-title {
   font-weight: bold;
@@ -696,7 +697,9 @@ small a {
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 
-  /* lastest funding round */
+  /* lastest funding round 
+    what babahh
+  */
 
   .funding-articles-flex {
     grid-template-columns: 1fr 1fr 1fr 1fr;

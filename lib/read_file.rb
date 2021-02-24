@@ -5,7 +5,7 @@ class ReadFile
       @error_msg = ''
       begin
         File.open(path) do |file|
-          @content = file.readlines
+          @content = file.readlines.map(&:chomp)
         end
       rescue => exception
         @content = []

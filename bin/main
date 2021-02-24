@@ -1,0 +1,13 @@
+#!/usr/bin/ruby
+require_relative '../lib/parser.rb'
+require_relative '../lib/read_file.rb'
+
+parser = Parser.new
+
+file = ReadFile.new(ARGV.first)
+file.content.each_with_index { |line, index|
+  process_comment = parser.check_comment(line, index)
+  unless process_comment
+    p [index]
+  end
+}
