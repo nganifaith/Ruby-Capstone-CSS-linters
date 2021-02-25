@@ -99,9 +99,9 @@ class Parser
 
     check_indentation # check for indentation before opening the block
     @open_blocks += 1
-    unless @current_line.include?(' {')
-      error_message('Expected space before {', 'warning')
-    end
+    return true if @current_line.include?(' {')
+
+    error_message('Expected space before {', 'warning')
     true
   end
 
