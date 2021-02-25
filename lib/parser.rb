@@ -2,11 +2,12 @@ require_relative 'error_file.rb'
 
 
 class Parser
-  attr_reader :errors, :open_blocks, :open_comment, :indent_size, :num_selectors, :current_line, :current_line_index
+  attr_reader :errors, :open_blocks, :open_comment, :indent_size, :num_selectors, :current_line, :current_line_index, :closed_block
   def initialize
     @errors = []
     @open_blocks = 0
     @open_comment = false
+    @closed_block = false
     @indent_size = 2
     @num_selectors = 0
     @current_line_index = 0
@@ -36,7 +37,15 @@ class Parser
     error_message('Expected space before {', 'warning') if @current_line.include?('{') && !@current_line.include?(' {')
     if @current_line.include?('}')
       @open_blocks.positive? ? @open_blocks -= 1 : error_message('Stray closing }', 'error')
+      @closed_block = true
     end
+  end
+
+  def check_new_line
+    p [@closed_block, @current_line_index]
+    error_message('Expected empty line', 'warning') if @closed_block && @current_line.strip.length.positive?
+
+    @closed_block = false
   end
 
   def remove_comment

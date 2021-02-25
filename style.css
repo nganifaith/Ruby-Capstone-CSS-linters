@@ -511,7 +511,6 @@ small a {
   .top-right-links {
     display: none;
   }
-
   .bottom-nav-bar {
     grid-area: bottom-nav-bar;
     display: flex;
@@ -519,7 +518,6 @@ small a {
     align-items: center;
     padding-left: 15px;
   }
-
   .bottom-nav-wrapper {
     display: flex;
     align-items: center;
@@ -729,7 +727,6 @@ small a {
   .deals-wrapper {
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }
-
   .deal-img{  
     height: 150px; /* remove this */
   }
