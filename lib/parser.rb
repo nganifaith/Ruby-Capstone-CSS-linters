@@ -58,9 +58,14 @@ class Parser
     return unless @current_line.strip.length.positive?
 
     matches = @current_line.scan(/[;{}]/)
-    if matches.length > 1 || (matches.length == 1 && !@current_line.strip.end_with?(matches[0]))
+
+    if matches.size.positive?
+      return if @current_line.strip.end_with?(matches[0])
+
       error_message("Expected new line after #{matches[0]}", 'error')
-    elsif matches.empty? && !@current_line.strip.end_with?(',')
+    else
+      return if @current_line.strip.end_with?(',')
+
       error_message('Missing either a ; { or }'.colorize(:blue), 'error')
     end
   end
