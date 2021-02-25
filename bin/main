@@ -6,12 +6,12 @@ parser = Parser.new
 
 file = ReadFile.new(ARGV.first)
 file.content.each_with_index { |line, index|
-  process_comment = parser.check_comment(line, index)
+  parser.next_line(line)
+  process_comment = parser.check_comment
   unless process_comment
-    parser.check_block(line, index)
-
+    parser.trailing_space
+    parser.check_block
   end
- 
 }
 
 p parser.errors
