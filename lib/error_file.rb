@@ -12,6 +12,11 @@ class ErrorFile
   end
 
   def color_severity
-    @severity == 'warning' ? @severity.colorize(:yellow) : @severity.colorize(:red)
+    case @severity
+    when 'warning' then @severity.colorize(:yellow)
+    when 'error' then @severity.colorize(:red)
+    else
+      @severity.colorize(:light_blue)
+    end
   end
 end

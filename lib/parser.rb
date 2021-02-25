@@ -25,7 +25,7 @@ class Parser
   def check_comment
     @open_comment = @current_line.include?('/*')
     @open_comment &&= !@current_line.include?('*/')
-    @open_comment || @current_line.strip.start_with?('*/') || @current_line.strip.start_with?('*/')
+    @open_comment || stripped.start_with?('*/') || stripped.start_with?('*/')
   end
 
   def trailing_space
@@ -33,12 +33,12 @@ class Parser
   end
 
   def check_block
-    check_close_block(check_open_block)
+    check_indentation unless check_close_block(check_open_block)
   end
 
   def check_new_line
-    contain_end = @current_line.strip.end_with?('}')
-    if @closed_block && @current_line.strip.length.positive? && !contain_end
+    contain_end = stripped.end_with?('}')
+    if @closed_block && stripped.length.positive? && !contain_end
       error_message('Expected empty line', 'warning')
     end
     @closed_block = false
@@ -47,44 +47,52 @@ class Parser
   def remove_comment
     start_index = @current_line.index('/*')
     stop_index = @current_line.index('*/')
-    unless start_index.nil?
-      first_half = @current_line[0...start_index]
-      !stop_index.nil? ? second_half = @current_line[stop_index + 2...@current_line.length] : second_half = ''
-      @current_line = first_half + second_half
+
+    return if start_index.nil?
+
+    first_half = @current_line[0...start_index]
+
+    second_half = ''
+    unless stop_index.nil?
+      second_half = @current_line[stop_index + 2...@current_line.length]
     end
+
+    @current_line = first_half + second_half
   end
 
   def end_char
-    return unless @current_line.strip.length.positive?
+    return unless stripped.length.positive?
 
     matches = @current_line.scan(/[;{}]/)
 
     if matches.size.positive?
-      return if @current_line.strip.end_with?(matches[0])
+      return if stripped.end_with?(matches[0])
 
-      error_message("Expected new line after #{matches[0]}", 'error')
+      error_message("Expected new line after #{matches[0]}", 'warning')
     else
-      return if @current_line.strip.end_with?(',')
+      return if stripped.end_with?(',')
 
-      error_message('Missing either a ; { or }'.colorize(:blue), 'error')
+      error_message('Missing either a ; { or }'.colorize(:blue))
     end
   end
 
   def check_indentation
+    return unless stripped.length.positive?
+
     expect_space = @open_blocks * @indent_size
     current_space = @current_line[/\A */].size
     return unless current_space != expect_space
 
-    error_message("Expected #{expect_space} spaces but got #{current_space}".colorize(:light_blue), 'error')
+    error_message("Expected #{expect_space} spaces but got #{current_space}")
   end
 
   def check_missing_tags
-    error_message('Missing }', 'error') if open_blocks.positive?
+    error_message('Missing }') if open_blocks.positive?
   end
 
   private
 
-  def error_message(message, severity)
+  def error_message(message, severity = 'error')
     @errors.push(ErrorFile.new(@current_line_index, message, severity))
   end
 
@@ -100,12 +108,18 @@ class Parser
   end
 
   def check_close_block(checked)
-    return unless @current_line.include?('}')
+    return checked unless @current_line.include?('}')
 
-    @open_blocks.positive? ? @open_blocks -= 1 : error_message('Stray closing }', 'error')
+    error_message('Stray closing }', 'error') unless @open_blocks.positive?
+    @open_blocks -= 1 if @open_blocks.positive?
     @closed_block = true
     # check for indentaion after closing the block if  it has not yet been
     # checked (single line blocks)
     check_indentation unless checked
+    true
+  end
+
+  def stripped
+    @current_line.strip
   end
 end
