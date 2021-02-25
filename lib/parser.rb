@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 require_relative 'error_file.rb'
 # This class implements out css checkers
 class Parser
@@ -36,10 +37,10 @@ class Parser
   end
 
   def check_new_line
-    if @closed_block && @current_line.strip.length.positive?
+    contain_end = @current_line.strip.end_with?('}')
+    if @closed_block && @current_line.strip.length.positive? && !contain_end
       error_message('Expected empty line', 'warning')
     end
-
     @closed_block = false
   end
 
@@ -48,7 +49,7 @@ class Parser
     stop_index = @current_line.index('*/')
     unless start_index.nil?
       first_half = @current_line[0...start_index]
-      !stop_index.nil? ? second_half = @current_line[stop_index + 2...@current_line.length] : second_half =  ''
+      !stop_index.nil? ? second_half = @current_line[stop_index + 2...@current_line.length] : second_half = ''
       @current_line = first_half + second_half
     end
   end
@@ -71,7 +72,11 @@ class Parser
 
     error_message("Expected #{expect_space} spaces but got #{current_space}".colorize(:light_blue), 'error')
   end
-  
+
+  def check_missing_tags
+    error_message('Missing }', 'error') if open_blocks.positive?
+  end
+
   private
 
   def error_message(message, severity)
@@ -83,7 +88,9 @@ class Parser
 
     check_indentation # check for indentation before opening the block
     @open_blocks += 1
-    error_message('Expected space before {', 'warning') unless @current_line.include?(' {')
+    unless @current_line.include?(' {')
+      error_message('Expected space before {', 'warning')
+    end
     true
   end
 
@@ -92,7 +99,7 @@ class Parser
 
     @open_blocks.positive? ? @open_blocks -= 1 : error_message('Stray closing }', 'error')
     @closed_block = true
-    # check for indentaion after closing the block if  it has not yet been 
+    # check for indentaion after closing the block if  it has not yet been
     # checked (single line blocks)
     check_indentation unless checked
   end
