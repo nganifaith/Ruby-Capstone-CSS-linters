@@ -15,6 +15,13 @@ This is a basic CSS linter project. It checks basic syntax in the provided CSS f
 
 # Program Flow
 1. The program starts checking for the presence of an opening comment tag if any content is ignored until a matching closing tag is met.
+
+      #### Example
+      ```
+      /* this  is an inline comment */
+
+      ```
+
 2. If comment_open is false program checks trailing spaces; if any found it adds the trailing space error to an errors array.
 3. Trailing space check is followed check new line. Checks for the presence of an empty line after a closing block element.
 4. Check new line is followed by check blocks. Check_block increments and decrements open_block by 1 when even it comes across an opening 

@@ -44,7 +44,6 @@ class Parser
   end
 
   def check_new_line
-    p [@closed_block, @current_line_index]
     error_message('Expected empty line', 'warning') if @closed_block && @current_line.strip.length.positive?
 
     @closed_block = false
@@ -67,13 +66,15 @@ class Parser
     elsif matches.length == 0 && !@current_line.strip.end_with?(',')
       error_message("Missing either a ; { or }".colorize(:blue), 'error')
    end
-  
   end
 
+  def check_identation
+
+  end
   private
   
-  def error_message(message, serverity)
-    @errors.push(ErrorFile.new(@current_line_index, message, serverity))
+  def error_message(message, severity)
+    @errors.push(ErrorFile.new(@current_line_index, message, severity))
   end
 
 end

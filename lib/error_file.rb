@@ -3,6 +3,6 @@ class ErrorFile
   def initialize(line, error, severity)
     @line = line
     @error = error
-    @serverity = severity
+    @severity = severity
   end
 end

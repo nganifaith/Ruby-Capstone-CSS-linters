@@ -17,4 +17,8 @@ file.content.each_with_index { |line, index|
   end
 }
 
-p parser.errors
+errors =  parser.errors
+
+errors.each{|val|
+  puts "#{val.severity}  line #{val.line}: #{val.error}"
+}
