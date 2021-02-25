@@ -742,7 +742,8 @@ small a {
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 
-  .deal-img {
+  .deal-img{  
     height: 150px;
   }
 }
+}  

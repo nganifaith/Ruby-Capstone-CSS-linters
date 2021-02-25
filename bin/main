@@ -8,6 +8,10 @@ file = ReadFile.new(ARGV.first)
 file.content.each_with_index { |line, index|
   process_comment = parser.check_comment(line, index)
   unless process_comment
-    p [index]
+    parser.check_block(line, index)
+
   end
+ 
 }
+
+p parser.errors
