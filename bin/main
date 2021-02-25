@@ -11,7 +11,7 @@ file.content.each do |line|
   parser.next_line(line)
   process_comment = parser.check_comment
   next if process_comment
-  
+
   parser.trailing_space
   parser.remove_comment
   parser.check_new_line
@@ -24,3 +24,5 @@ errors = parser.errors
 errors.each do |val|
   puts "#{val.color_severity}  line #{val.line}: #{val.error}"
 end
+
+puts 'No errors found'.colorize(:green) unless errors.length.positive?
