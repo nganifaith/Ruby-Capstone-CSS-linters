@@ -1,4 +1,6 @@
 require_relative 'error_file.rb'
+require 'colorize'
+
 
 
 class Parser
@@ -63,7 +65,7 @@ class Parser
       error_message("Expected new line after #{matches[0]}", 'error')
       
     elsif matches.length == 0 && !@current_line.strip.end_with?(',')
-      error_message("Missing either a ; { or }", 'error')
+      error_message("Missing either a ; { or }".colorize(:blue), 'error')
    end
   
   end
