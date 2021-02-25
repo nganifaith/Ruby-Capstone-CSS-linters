@@ -9,8 +9,13 @@ class Parser
     @open_comment = false
     @indent_size = 2
     @num_selectors = 0
-    @current_line_index = 1
+    @current_line_index = 0
     @current_line = ''
+  end
+
+  def next_line(line) 
+    @current_line_index += 1
+    @current_line = line
   end
 
   def check_comment
@@ -19,6 +24,7 @@ class Parser
     end
     @open_comment = @open_comment && !@current_line.include?("*/")
     @open_comment || @current_line.strip.start_with?("/*")
+
   end
 
   def trailing_space
@@ -33,11 +39,12 @@ class Parser
     end
   end
 
-  def next_line(line) 
-    @current_line_index += 1
-    @current_line = line
+  def remove_comment
+    start_index = @current_line.index('/*')
+    if start_index != nil
+      @current_line = !@current_line.include?('*/')? @current_line[0...start_index]:  @current_line[0...start_index] + @current_line[@current_line.index('*/') + 2...@current_line.length]
+    end
   end
-
   private
   
   def error_message(message, serverity)

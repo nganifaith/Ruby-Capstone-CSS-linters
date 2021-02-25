@@ -9,6 +9,7 @@ file.content.each_with_index { |line, index|
   parser.next_line(line)
   process_comment = parser.check_comment
   unless process_comment
+    parser.remove_comment
     parser.trailing_space
     parser.check_block
   end
