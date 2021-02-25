@@ -23,7 +23,7 @@ class Parser
       @open_comment = @current_line.include?("/*")
     end
     @open_comment = @open_comment && !@current_line.include?("*/")
-    @open_comment || @current_line.strip.start_with?("/*")
+    @open_comment || @current_line.strip.start_with?("/*") || @current_line.strip.start_with?('*/')
 
   end
 
@@ -45,6 +45,20 @@ class Parser
       @current_line = !@current_line.include?('*/')? @current_line[0...start_index]:  @current_line[0...start_index] + @current_line[@current_line.index('*/') + 2...@current_line.length]
     end
   end
+
+  def check_end_char
+    return unless @current_line.strip.length.positive?
+
+    matches = @current_line.scan(/[;{}]/)
+    if matches.length > 1 || (matches.length == 1 && @current_line.strip.index(matches[0]) != @current_line.strip.length - 1)
+      error_message("Expected new line after #{matches[0]}", 'error')
+      
+    elsif matches.length == 0 && !@current_line.strip.end_with?(',')
+      error_message("Missing either a ; { or }", 'error')
+   end
+  
+  end
+
   private
   
   def error_message(message, serverity)

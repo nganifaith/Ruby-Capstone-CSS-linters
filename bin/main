@@ -12,6 +12,7 @@ file.content.each_with_index { |line, index|
     parser.remove_comment
     parser.trailing_space
     parser.check_block
+    parser.check_end_char
   end
 }
 
