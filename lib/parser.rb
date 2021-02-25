@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 require_relative 'error_file.rb'
 # This class implements out css checkers
 class Parser

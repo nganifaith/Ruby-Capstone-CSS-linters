@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 require 'colorize'
 require 'colorized_string'
 # This class creates and an array of errors seen
