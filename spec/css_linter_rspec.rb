@@ -9,4 +9,8 @@ describe ReadFile do
     file = ReadFile.new('./hello')
     expect(file.error_msg).to eql('Check file path')
   end
+  it 'should return the content in the file' do
+    file = ReadFile.new('././style.css')
+    expect(file.content.length.positive?).to eql(true)
+  end
 end

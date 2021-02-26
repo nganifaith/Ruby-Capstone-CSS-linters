@@ -15,6 +15,21 @@ class Parser
     @current_line = ''
   end
 
+  def parse_file(lines)
+    lines.each do |line|
+      next_line(line)
+      process_comment = check_comment
+      next if process_comment
+
+      trailing_space
+      remove_comment
+      check_new_line
+      check_block
+      end_char
+    end
+    check_missing_tags
+  end
+
   def next_line(line)
     @current_line_index += 1
     @current_line = line
@@ -27,7 +42,7 @@ class Parser
   end
 
   def trailing_space
-    error_message('Trailing space', 'warning')  if @current_line.end_with?(' ')
+    error_message('Trailing space', 'warning') if @current_line.end_with?(' ')
   end
 
   def check_block
@@ -90,6 +105,10 @@ class Parser
 
   private
 
+  def stripped
+    @current_line.strip
+  end
+
   def error_message(message, severity = 'error')
     @errors.push(ErrorFile.new(@current_line_index, message, severity))
   end
@@ -117,7 +136,7 @@ class Parser
     true
   end
 
-  def stripped
-    @current_line.strip
+  def check_expected_new_line
+    
   end
 end

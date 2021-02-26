@@ -5,18 +5,7 @@ require_relative '../lib/read_file.rb'
 parser = Parser.new
 
 file = ReadFile.new(ARGV.first)
-file.content.each do |line|
-  parser.next_line(line)
-  process_comment = parser.check_comment
-  next if process_comment
-
-  parser.trailing_space
-  parser.remove_comment
-  parser.check_new_line
-  parser.check_block
-  parser.end_char
-end
-parser.check_missing_tags
+parser.parse_file(file.content)
 errors = parser.errors
 
 errors.each do |val|
