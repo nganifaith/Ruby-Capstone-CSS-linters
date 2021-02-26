@@ -73,7 +73,7 @@ Knowledge about Ruby:
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/denisdiaconu/TicTacToe/issues).
+Feel free to check the [issues page](https://github.com/nganifaith/Ruby-Capstone-CSS-linters/issues).
 
 ## Show your support
 
