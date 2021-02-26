@@ -12,6 +12,7 @@ This is a basic CSS linter project. It checks basic syntax in the provided CSS f
 3. Check for the presence of the closing block element.
 4. Check for the presence of an empty line after a closing block element.
 5. Check for indentation correctness at the various level
+6. Check for end of link character ([; {, }]) if lines end with "," this check is ignored.
 
 # Program Flow
 1. The program starts checking for the presence of an opening comment tag if any content is ignored until a matching closing tag is met.
