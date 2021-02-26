@@ -2,7 +2,7 @@
 require_relative '../lib/parser.rb'
 require_relative '../lib/read_file.rb'
 
-parser = Parser.new
+parser = Parser.new 
 
 file = ReadFile.new(ARGV.first)
 file.content.each do |line|
