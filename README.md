@@ -2,7 +2,7 @@
 
 # CSS Linter
 
-![screenshot]( )
+![screenshot](./ScreenShot.png)
 
 This is a basic CSS linter project. It checks basic syntax in the provided CSS file and returns error messages where need be. 
 
@@ -29,6 +29,8 @@ This is a basic CSS linter project. It checks basic syntax in the provided CSS f
 5. Check block is followed by checking the presence of an end of line character (in this function I made an exception of "," at the end 
   of the line). End of line characters include: ";", " {" and, " } " increment errors if a line is missing any of these characters.
 
+Note: All of the above test are carried out in a loop. Once the loop is done the program check for any missing tags.
+
 
 
 ## Built With
@@ -50,7 +52,12 @@ Knowledge about Ruby:
 ## Setup
 - git clone:  [Github repo](https://github.com/nganifaith/Ruby-Capstone-CSS-linters.git)
 - cd repo-folder
-- start program:  bin/main.rb path_to_css_file (example bin/main ./style.css  This is my test file)
+
+## run program
+  start program:  bin/main.rb path_to_css_file (example bin/main ./style.css  This is my test file)
+
+## run Rspec
+  rspec spec/css_linter_rspec.rb
 
 ## Author
 
