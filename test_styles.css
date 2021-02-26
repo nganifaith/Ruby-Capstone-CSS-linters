@@ -1,0 +1,19 @@
+main {
+  max-width: 700px;
+  padding: 0 10px;
+  margin: auto;
+  text-align: justify;
+}
+
+article {
+   margin: 10px;
+}
+
+.text-type {
+  margin: 10px 0;
+  padding: 15px;
+}
+
+label {
+  
+}

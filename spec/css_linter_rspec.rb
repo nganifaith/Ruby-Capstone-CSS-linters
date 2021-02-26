@@ -14,3 +14,19 @@ describe ReadFile do
     expect(file.content.length.positive?).to eql(true)
   end
 end
+
+describe Parser do
+  describe '#parse_file' do
+    it 'should return all errors in the file' do
+      parse_test = Parser.new
+      file = ReadFile.new('././style.css')
+      parse_test.parse_file(file.content)
+      expect(parse_test.errors.length).to eql(16)
+    end
+    it 'should return and empty array' do
+      parse_test = Parser.new
+      parse_test.parse_file([])
+      expect(parse_test.errors.length).to eql(0)
+    end
+  end
+end

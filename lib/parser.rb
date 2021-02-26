@@ -135,8 +135,4 @@ class Parser
     check_indentation unless checked
     true
   end
-
-  def check_expected_new_line
-    
-  end
 end

@@ -1,0 +1,306 @@
+body {
+  background-color: #f4f5f6;
+}
+
+.row {
+  margin: 0;
+}
+
+.news-l-h3 {
+  color: #f72210;
+  font-size: 17px;
+}
+
+.email-input input {
+  height: 40px;
+  width: 150px;
+}
+
+.email-input button {
+  height: 35px;
+}
+
+.img-stack-bucket {
+  width: 350px;
+  height: 300px;
+  margin: auto;
+}
+
+.headers-text-colors {
+  color: #f72210;
+  font-size: 16px;
+}
+
+.stack-desktop-img {
+  width: 150px;
+  left: 15%;
+  top: 10%;
+}
+
+.stack-desktop-img:last-child {
+  top: 15%;
+  left: 35%;
+}
+
+a {
+  text-decoration: none;
+  font-weight: normal;
+  color: black;
+}
+
+.category-image {
+  width: 110px;
+  height: 126px;
+}
+
+ul {
+  list-style: none;
+}
+
+.debate-img {
+  width: 63px;
+  height: 63px;
+}
+
+.turn-item img {
+  height: 300px;
+}
+
+.vs::after {
+  top: 50%;
+}
+
+.vs::before {
+  top: calc(50% - 2px);
+}
+
+.magazine-heading h3 {
+  font-size: 19px;
+}
+
+.vs-text {
+  position: relative;
+  z-index: 1;
+  width: 32px;
+  height: 32px;
+  background-color: #000;
+  color: #d6d6d6;
+  border-radius: 50%;
+  font: bold 14px/32px "Roboto Condensed", sans-serif;
+  text-align: center;
+  margin: 6px auto;
+}
+
+.magazine-card h5 {
+  font-size: 13px;
+}
+
+.debate-p {
+  font-size: 14px;
+}
+
+.travel-card-text {
+  font-size: 16px;
+}
+
+.story-p {
+  font-size: 13px;
+  line-height: 18px;
+}
+
+.story-h3 {
+  font-size: 20px;
+  line-height: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.story-img {
+  height: 120px;
+  margin-right: 10px;
+}
+
+.content p {
+  font-size: 13px;
+  line-height: 20px;
+}
+
+.content h4 {
+  font-size: 15px;
+  line-height: 20px;
+}
+
+.my-story h1,
+.the-debate h3,
+.more-stories h3,
+.feature-h3 {
+  padding-top: 20px;
+  font-size: 16px;
+}
+
+.the-debate h4 {
+  font-size: 20px;
+}
+
+.cat-header {
+  font-size: 17px;
+  line-height: 16px;
+}
+
+.sub-card {
+  width: 100%;
+  height: 9rem;
+  margin: auto;
+  overflow: hidden;
+}
+
+.sub-card h5 {
+  font-size: 90%;
+}
+
+.sub-img {
+  width: 35px;
+  height: 35px;
+  color: #f72210;
+  background-color: #f72210;
+}
+
+.header-svg svg {
+  width: 150px;
+  fill: white;
+}
+
+.subscription-sectiom {
+  background-color: #f4f5f6;
+}
+
+.last-footer-ul li,
+.mid-footer-ul li,
+.edition {
+  font-size: 17px;
+  color: #767473;
+}
+
+.last-footer-ul li a,
+.mid-footer-ul li a {
+  color: #767473;
+}
+
+.first-header {
+  background-color: #f72210;
+  padding: 0 10px;
+  height: 45px;
+}
+
+.m-img {
+  height: 320px;
+  object-fit: cover;
+}
+
+.sub-btn,
+.login-btn {
+  height: 30px;
+  font-size: 12px;
+}
+
+.login-section {
+  gap: 20px;
+  color: rgba(255, 255, 255, 0.808);
+}
+
+.main-newsletter-img {
+  object-fit: contain;
+  overflow: hidden;
+  object-position: right;
+}
+
+.info-b {
+  margin-left: 50%;
+}
+
+.pic-n-1 {
+  width: 140px;
+  left: 90px;
+  top: 40px;
+}
+
+.pic-n-2 {
+  width: 140px;
+  left: 150px;
+  top: 50px;
+}
+
+.img-bucket {
+  width: 200px;
+}
+
+.date-stamp {
+  font-size: 13px;
+}
+
+.footer-svg svg {
+  display: block;
+  fill: #f72210;
+  width: 236px;
+  margin-bottom: 20px;
+}
+
+.side-img {
+  width: 63px;
+  height: 63px;
+}
+
+@media only screen and (min-width: 767px) {
+  .turn-item img {
+    height: 8rem;
+    object-fit: cover;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .first-header {
+    height: 95px;
+    padding: 22px;
+  }
+
+  .header-svg svg {
+    width: 100%;
+    fill: white;
+  }
+
+  .newsletter-desktop {
+    padding: 40px 30px 10px 40px;
+  }
+
+  .news-category::before {
+    position: absolute;
+    top: 0;
+    right: 0;
+    content: "";
+    display: block;
+    width: 5%;
+    background-color: #f72210;
+    border-left: 12px solid white;
+    border-top: 13px solid #f72210;
+  }
+
+  ul li {
+    padding: 5px;
+    color: black;
+  }
+
+  .date,
+  .login-btn {
+    color: white;
+    font-size: 18px;
+  }
+
+  .sub-btn {
+    height: 35px;
+    font-size: 15px;
+    color: rgb(8, 8, 8);
+  }
+}
+
+.opacity-75 {
+  opacity: 0.5;
+}
