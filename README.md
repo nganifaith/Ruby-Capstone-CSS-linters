@@ -58,7 +58,7 @@ Knowledge about Ruby:
   start program:  bin/main path_to_css_file (example bin/main ./style.css  This is my test file)
 
 ## run Rspec
-  rspec spec/css_linter_rspec.rb
+  rspec
 
 ## Author
 
