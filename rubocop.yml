@@ -1,14 +1,24 @@
+AllCops:
+  Exclude:
+    - "Guardfile"
+    - "Rakefile"
+    - "bug.rb"
+
+  DisplayCopNames: true
+
 Layout/LineLength:
   Max: 120
 Metrics/MethodLength:
-  Max: 120
+  Max: 20
 Metrics/AbcSize:
-  Max: 100
+  Max: 50
 Metrics/ClassLength:
-  Max: 350
+  Max: 150
 Metrics/BlockLength:
   ExcludedMethods: ['describe']
-  Max: 100
+  Max: 30
+
+
 Style/Documentation:
   Enabled: false
 Style/ClassAndModuleChildren:
@@ -21,6 +31,7 @@ Style/DefWithParentheses:
   Enabled: false
 Style/FrozenStringLiteralComment:
   EnforcedStyle: never
+
 Layout/HashAlignment:
   EnforcedColonStyle: key
 Layout/ExtraSpacing:
@@ -38,9 +49,6 @@ Style/HashTransformKeys:
   Enabled: false
 Style/HashTransformValues:
   Enabled: false
-Metrics/ModuleLength:
-  Enabled: false
-Metrics/CyclomaticComplexity:
-  Enabled: false
-Metrics/PerceivedComplexity:
+  
+Style/CaseEquality:
   Enabled: false
