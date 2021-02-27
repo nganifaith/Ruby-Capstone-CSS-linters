@@ -1,5 +1,4 @@
 require 'colorize'
-require 'colorized_string'
 # This class creates and an array of errors seen
 class ErrorFile
   attr_reader :line, :error, :severity

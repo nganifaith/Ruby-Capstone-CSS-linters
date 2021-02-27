@@ -1,4 +1,4 @@
-# spec/css_linter_rspec.rb
+# spec/css_linter_spec.rb
 
 require_relative '../lib/error_file.rb'
 require_relative '../lib/parser.rb'
