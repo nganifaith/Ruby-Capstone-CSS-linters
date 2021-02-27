@@ -2,7 +2,7 @@
 
 # CSS Linter
 
-![screenshot](./ScreenShot.png)
+![screenshot](./assets/ScreenShot.png)
 
 This is a basic CSS linter project. It checks basic syntax in the provided CSS file and returns error messages where need be. 
 
@@ -55,7 +55,7 @@ Knowledge about Ruby:
 - cd repo-folder
 
 ## run program
-  start program:  bin/main.rb path_to_css_file (example bin/main ./style.css  This is my test file)
+  start program:  bin/main path_to_css_file (example bin/main ./style.css  This is my test file)
 
 ## run Rspec
   rspec spec/css_linter_rspec.rb
