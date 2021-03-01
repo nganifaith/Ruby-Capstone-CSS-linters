@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'colorize'
 # This class creates and an array of errors seen
 class ErrorFile

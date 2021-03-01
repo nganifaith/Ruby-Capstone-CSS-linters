@@ -1,4 +1,7 @@
+# frozen_string_literal: true
+
 require_relative 'error_file.rb'
+
 # This class implements out css checkers
 class Parser
   attr_reader :errors, :open_blocks, :open_comment, :indent_size, :num_selectors
@@ -51,7 +54,7 @@ class Parser
 
   def check_new_line
     contain_end = stripped.end_with?('}')
-    if @closed_block && stripped.length.positive? && !contain_end # rubocop:disable Style/IfUnlessModifier
+    if @closed_block && stripped.length.positive? && !contain_end
       error_message('Expected empty line', 'warning')
     end
     @closed_block = false
@@ -66,7 +69,7 @@ class Parser
     first_half = @current_line[0...start_index]
 
     second_half = ''
-    unless stop_index.nil? # rubocop:disable Style/IfUnlessModifier
+    unless stop_index.nil?
       second_half = @current_line[stop_index + 2...@current_line.length]
     end
 
