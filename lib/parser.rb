@@ -115,7 +115,7 @@ class Parser
   def check_open_block
     return unless @current_line.include?('{')
 
-    check_indentation # check for indentation before opening the block
+    check_indentation
     @open_blocks += 1
     return true if @current_line.include?(' {')
 
@@ -129,8 +129,6 @@ class Parser
     error_message('Stray closing }', 'error') unless @open_blocks.positive?
     @open_blocks -= 1 if @open_blocks.positive?
     @closed_block = true
-    # check for indentaion after closing the block if  it has not yet been
-    # checked (single line blocks)
     check_indentation unless checked
     true
   end
