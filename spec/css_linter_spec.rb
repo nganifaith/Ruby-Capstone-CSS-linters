@@ -10,6 +10,10 @@ describe ReadFile do
     expect(file.error_msg).to eql('Check file path')
   end
   it 'should return and error' do
+    file = ReadFile.new('./nothing')
+    expect(file.error_msg).to eql('Check file path')
+  end
+  it 'should return and error' do
     file = ReadFile.new(' ')
     expect(file.error_msg).to eql('Check file path')
   end
