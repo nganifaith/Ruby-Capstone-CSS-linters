@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # This class loads and reads the file into out program
 class ReadFile
   attr_reader :file_path, :error_msg, :content

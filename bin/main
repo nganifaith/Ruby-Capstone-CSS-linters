@@ -1,4 +1,5 @@
 #!/usr/bin/ruby
+# frozen_string_literal: true
 
 require_relative '../lib/parser.rb'
 require_relative '../lib/read_file.rb'
