@@ -65,9 +65,9 @@ class Parser
     return if start_index.nil?
 
     first_half = @current_line[0...start_index]
-
+    line_len = @current_line.length
     second_half = ''
-    second_half = @current_line[stop_index + 2...@current_line.length] unless stop_index.nil?
+    second_half = @current_line[stop_index + 2...line_len] unless stop_index.nil?
 
     @current_line = first_half + second_half
   end
