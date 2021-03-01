@@ -55,7 +55,7 @@ Knowledge about Ruby:
 - cd repo-folder
 
 ## run program
-  start program:  bin/main path_to_css_file (example bin/main ./style.css  This is my test file)
+  start program:  bin/main path_to_css_file (example bin/main ./test_file/style.css  This is my test file)
 
 ## run Rspec
   rspec
