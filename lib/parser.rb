@@ -52,9 +52,9 @@ class Parser
 
   def check_new_line
     contain_end = stripped.end_with?('}')
-    if @closed_block && stripped.length.positive? && !contain_end # rubocop:disable Style/IfUnlessModifier
-      error_message('Expected empty line', 'warning')
-    end
+    bool = @closed_block && stripped.length.positive? && !contain_end
+    error_message('Expected empty line', 'warning') if bool
+
     @closed_block = false
   end
 
@@ -67,9 +67,7 @@ class Parser
     first_half = @current_line[0...start_index]
 
     second_half = ''
-    unless stop_index.nil? # rubocop:disable Style/IfUnlessModifier
-      second_half = @current_line[stop_index + 2...@current_line.length]
-    end
+    second_half = @current_line[stop_index + 2...@current_line.length] unless stop_index.nil?  
 
     @current_line = first_half + second_half
   end
