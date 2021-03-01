@@ -17,6 +17,10 @@ describe ReadFile do
     file = ReadFile.new('././style.css')
     expect(file.content.length.positive?).to eql(true)
   end
+  it 'should return the content in the file' do
+    file = ReadFile.new('././test_styles.css')
+    expect(file.content.length.positive?).to eql(true)
+  end
 end
 
 describe Parser do
