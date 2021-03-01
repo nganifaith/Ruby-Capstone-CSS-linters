@@ -48,7 +48,7 @@ describe Parser do
       parse_test.parse_file(file.content)
       expect(parse_test.errors.empty?).to eql(false)
     end
-    describe '#parse_file' do
+    describe '#next_line' do
       it 'should return a line' do
         parse_test = Parser.new
         file = ReadFile.new('././style.css')
