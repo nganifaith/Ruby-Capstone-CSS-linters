@@ -1,0 +1,15 @@
+#!/usr/bin/ruby
+require_relative '../lib/parser.rb'
+require_relative '../lib/read_file.rb'
+
+parser = Parser.new
+
+file = ReadFile.new(ARGV.first)
+parser.parse_file(file.content)
+errors = parser.errors
+
+errors.each do |val|
+  puts "#{val.color_severity}  line #{val.line}: #{val.error}"
+end
+
+puts 'No errors found'.colorize(:green) unless errors.length.positive?
