@@ -1,4 +1,3 @@
-
 # spec/css_linter_spec.rb
 
 require_relative '../lib/error_file.rb'
