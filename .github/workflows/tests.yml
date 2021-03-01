@@ -1,7 +1,5 @@
 name: Tests
-
 on: pull_request
-
 jobs:
   rspec:
     name: RSpec
@@ -13,7 +11,8 @@ jobs:
           ruby-version: 2.6.x
       - name: Setup RSpec
         run: |
-          [ -f Gemfile ] && bundle
+          [ -f Gemfile ]
           gem install --no-document rspec:'~>3.0'
+          gem install colorize
       - name: RSpec Report
         run: rspec --force-color --format documentation
