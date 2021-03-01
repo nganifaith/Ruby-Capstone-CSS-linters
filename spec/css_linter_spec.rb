@@ -23,6 +23,7 @@ describe ReadFile do
   end
 end
 
+# rubocop:disable  Metrics/BlockLength
 describe Parser do
   describe '#parse_file' do
     it 'should return all errors in the file' do
@@ -58,3 +59,4 @@ describe Parser do
     end
   end
 end
+# rubocop:enable Metrics/BlockLength
