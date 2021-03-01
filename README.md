@@ -54,6 +54,11 @@ Knowledge about Ruby:
 - git clone:  [Github repo](https://github.com/nganifaith/Ruby-Capstone-CSS-linters.git)
 - cd repo-folder
 
+## Dependencies
+
+- Colorize: Install by running gem install colorize as an admin
+- Bundler: gem install bundler:2.2.9
+
 ## run program
   start program:  bin/main path_to_css_file (example bin/main ./test_file/style.css  This is my test file)
 
